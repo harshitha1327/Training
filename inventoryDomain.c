@@ -52,7 +52,7 @@ void main()
 			case 5: userResponse = 0;
 					break;
 		}
-	} while(userResponse);	
+	} while (userResponse);	
 }
 
 int addItem()
