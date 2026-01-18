@@ -27,7 +27,6 @@ struct inventory *head = NULL;
 struct inventory *last = NULL;
 struct inventory *temp = NULL;
 struct inventory *newItem = NULL;
-int itemCount = 0;
 
 void main()
 {
@@ -79,7 +78,6 @@ int addItem()
 		newItem -> next = NULL;
 		last = newItem;
 	}
-	itemCount++;
 	return 1;
 }
 
@@ -103,7 +101,6 @@ int showAllItems()
 		printf("Inventory is empty!\n");
 		return 0;
 	}
-	printf("%d\n", itemCount);
 	printf("%*s %*s %*s %*s\n", SIZE_OF_ITEM_ID, "Item Id", SIZE_OF_ITEM_NAME, "Item Name",positionTheText, "ItemPrice", positionTheText, "Status");
 	for (temp = head; temp != NULL; temp = temp -> nextItem)
 	{
