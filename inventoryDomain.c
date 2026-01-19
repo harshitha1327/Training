@@ -75,7 +75,7 @@ int addItem()
 	else
 	{
 		last -> nextItem = newItem;
-		newItem -> next = NULL;
+		newItem -> nextItem = NULL;
 		last = newItem;
 	}
 	return 1;
