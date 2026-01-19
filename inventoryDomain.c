@@ -12,7 +12,7 @@ int addItem();
 int showAllItems();
 int updateItemPrice();
 int deleteItem();
-int isItemIdFound();
+int isItemIdFound(char *);
 
 struct inventory
 {
@@ -119,7 +119,7 @@ int showAllItems()
 
 int updateItemPrice()
 {
-	int itemFound = isItemIdFound();
+	int itemFound = isItemIdFound("update");
 	if (itemFound)
 	{
 		printf("Enter new price of the item: ");
@@ -131,7 +131,7 @@ int updateItemPrice()
 
 int deleteItem()
 {
-	int itemFound = isItemIdFound();
+	int itemFound = isItemIdFound("delete");
 	if (itemFound)
 	{
 		temp -> status = 'O';
@@ -140,11 +140,11 @@ int deleteItem()
 	return 0;		
 }
 
-int isItemIdFound()
+int isItemIdFound(char *operation)
 {
 	char itemId[SIZE_OF_ITEM_ID];
 	getchar();
-	printf("Enter item id: ");
+	printf("Enter item id to %s: ", operation);
 	fgets(itemId, SIZE_OF_ITEM_ID, stdin);
 	removeNewLine(itemId);
 	for (temp = head; temp != NULL ; temp = temp -> nextItem)
